@@ -1,6 +1,10 @@
+import Container from "./components/Container";
+
 function App() {
   return (
-    <p>Hello world!</p>
+    <Container>
+      <p>Hello world!</p>
+    </Container>
   );
 }
 
