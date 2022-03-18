@@ -1,0 +1,59 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form__header {
+  color: maroon;
+  text-align: center;
+}
+
+.form__label {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 667px) {
+  .form__label {
+    flex-direction: column;
+    align-items: unset;
+    gap: 10px;
+  }
+}
+
+.form__field-text {
+  flex-basis: 200px;
+}
+
+@media (max-width: 667px) {
+  .form__field-text {
+    flex-basis: unset;
+  }
+}
+
+.form__field {
+  flex-grow: 1;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  padding: 10px;
+}
+
+.form__button {
+  border: unset;
+  background: maroon;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: filter 1s;
+}
+
+.form__button:hover {
+  filter: brightness(110%);
+  cursor: pointer;
+}
+
+.form__button:active {
+  filter: brightness(110%);
+}
