@@ -13,8 +13,6 @@ function App() {
       targetAmount: (amount / rate).toFixed(2),
       currency
     })
-
-    console.log(amount, currency, rate, amount / rate)
   }
 
   return (
