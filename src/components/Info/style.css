@@ -1,5 +1,4 @@
 .info {
-  text-align: center;
   margin-top: 20px;
 }
 
@@ -10,4 +9,9 @@
 .info__result {
   font-size: 1.5rem;
   color: maroon;
+  text-align: center;
+}
+
+.info__date {
+  font-size: 0.9rem;
 }
