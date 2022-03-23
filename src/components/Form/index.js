@@ -3,15 +3,24 @@ import { useState } from "react"
 import { currencies } from "../../currencies"
 import "./style.css"
 
-const Form = () => {
+const Form = props => {
   const [amount, setAmount] = useState("")
   const [currency, setCurrency] = useState("EUR")
 
+  const formSubmitHandler = event => {
+    event.preventDefault()
+
+    const currencyInfo = currencies.find(curr => curr.short === currency)
+    const rate = currencyInfo.rate
+
+    props.onCalculateResult(amount, currency, rate)
+  }
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={formSubmitHandler}>
       <h1 className="form__header">Przelicznik walut</h1>
       <label className="form__label">
-        <span className="form__field-text"> Chcę wymienić*:</span>
+        <span className="form__field-text">Chcę wymienić*:</span>
         <input
           className="form__field"
           placeholder="Kwota w PLN"
