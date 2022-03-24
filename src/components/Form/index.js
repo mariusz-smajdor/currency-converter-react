@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import { currencies } from "../../currencies"
 import "./style.css"
@@ -7,13 +7,25 @@ const Form = props => {
   const [amount, setAmount] = useState("")
   const [currency, setCurrency] = useState("EUR")
 
+  const inputRef = useRef()
+
+  const focusInput = input => input.current.focus()
+
   const formSubmitHandler = event => {
     event.preventDefault()
 
     const currencyInfo = currencies.find(curr => curr.short === currency)
     const rate = currencyInfo.rate
 
+    if (!amount) {
+      focusInput(inputRef)
+      return
+    }
+
     props.onCalculateResult(amount, currency, rate)
+
+    setAmount("")
+    focusInput(inputRef)
   }
 
   return (
@@ -22,6 +34,7 @@ const Form = props => {
       <label className="form__label">
         <span className="form__field-text">Chcę wymienić*:</span>
         <input
+          ref={inputRef}
           className="form__field"
           placeholder="Kwota w PLN"
           type="number"
