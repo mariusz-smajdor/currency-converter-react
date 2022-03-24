@@ -7,7 +7,7 @@ const Form = props => {
   const [amount, setAmount] = useState("")
   const [currency, setCurrency] = useState("EUR")
 
-  const inputRef = useRef()
+  const inputRef = useRef(null)
 
   const focusInput = input => input.current.focus()
 
