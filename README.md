@@ -13,6 +13,7 @@ https://mariusz-smajdor.github.io/currency-converter-react/
 - setInterval
 - useState
 - useEffect
+- useRef
 
 ## Getting Started with Create React App
 
