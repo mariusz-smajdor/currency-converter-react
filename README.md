@@ -14,6 +14,7 @@ https://mariusz-smajdor.github.io/currency-converter-react/
 - useState
 - useEffect
 - useRef
+- custom hooks
 
 ## Getting Started with Create React App
 
