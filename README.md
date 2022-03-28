@@ -8,13 +8,13 @@ https://mariusz-smajdor.github.io/currency-converter-react/
 
 ## Conventions and technologies
 
-- BEM
 - Immutability
 - setInterval
 - useState
 - useEffect
 - useRef
 - custom hooks
+- styled components
 
 ## Getting Started with Create React App
 
