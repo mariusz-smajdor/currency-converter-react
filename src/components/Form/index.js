@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
 
+import { Wrapper, Title, Label, LabelText, Input, Button } from "./styled"
 import { currencies } from "../../currencies"
-import "./style.css"
 
 const Form = props => {
   const [amount, setAmount] = useState("")
@@ -29,13 +29,12 @@ const Form = props => {
   }
 
   return (
-    <form className="form" onSubmit={formSubmitHandler}>
-      <h1 className="form__header">Przelicznik walut</h1>
-      <label className="form__label">
-        <span className="form__field-text">Chcę wymienić*:</span>
-        <input
+    <Wrapper onSubmit={formSubmitHandler}>
+      <Title>Przelicznik walut</Title>
+      <Label>
+        <LabelText>Chcę wymienić*:</LabelText>
+        <Input
           ref={inputRef}
-          className="form__field"
           placeholder="Kwota w PLN"
           type="number"
           step="0.01"
@@ -43,21 +42,20 @@ const Form = props => {
           value={amount}
           onChange={event => setAmount(event.target.value)}
         />
-      </label>
-      <label className="form__label">
-        <span className="form__field-text">Chcę dostać:</span>
-        <select
-          className="form__field"
+      </Label>
+      <Label>
+        <LabelText>Chcę dostać:</LabelText>
+        <Input as="select"
           value={currency}
           onChange={event => setCurrency(event.target.value)}
         >
           {currencies.map(currency => (
             <option key={currency.short} value={currency.short}>{currency.name}</option>
           ))}
-        </select>
-      </label>
-      <button className="form__button" type="submit">Przelicz!</button>
-    </form>
+        </Input>
+      </Label>
+      <Button>Przelicz!</Button>
+    </Wrapper>
   )
 }
 

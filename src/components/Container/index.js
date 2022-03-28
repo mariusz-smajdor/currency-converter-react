@@ -1,10 +1,10 @@
-import "./style.css"
+import { Wrapper } from "./styled"
 
 const Container = props => {
   return (
-    <main className="container">
+    <Wrapper>
       {props.children}
-    </main>
+    </Wrapper>
   )
 }
 

@@ -1,23 +1,23 @@
 import { useCurrentDate } from "./useCurrentDate"
-import "./style.css"
+import { Wrapper, InfoPar } from "./styled"
 
 const Info = props => {
   const currentDate = useCurrentDate()
 
   return (
-    <section className="info">
-      <p className="info__result">
+    <Wrapper>
+      <InfoPar styledResult>
         {props.result && `${props.result.sourceAmount} PLN = ${props.result.targetAmount} ${props.result.currency}`}
-      </p>
-      <p className="info__source">
+      </InfoPar>
+      <InfoPar>
         Kursy walut pochodzą ze strony nbp.pl z tabeli nr
         048/A/NBP/2022 z dnia 2022 03 10.
-      </p>
-      <p className="info__date">
+      </InfoPar>
+      <InfoPar>
         Dzisiaj jest {" "}
         {currentDate}
-      </p>
-    </section>
+      </InfoPar>
+    </Wrapper>
   )
 }
 
