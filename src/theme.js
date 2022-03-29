@@ -1,7 +1,8 @@
 export const theme = {
   color: {
     mainText: "#333",
-    mainDetail: "maroon"
+    mainDetail: "maroon",
+    error: "crimson"
   },
   breakpoint: {
     mobileMax: 667
