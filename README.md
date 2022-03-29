@@ -2,6 +2,8 @@
 
 <img src="./src/images/coin.png" alt="Page's icon" />
 
+This project is using https://exchangerate.host for fetching currency data.
+
 ## Demo
 
 https://mariusz-smajdor.github.io/currency-converter-react/
@@ -10,6 +12,7 @@ https://mariusz-smajdor.github.io/currency-converter-react/
 
 - Immutability
 - setInterval
+- setTimeout
 - useState
 - useEffect
 - useRef
