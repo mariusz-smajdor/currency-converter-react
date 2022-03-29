@@ -13,6 +13,7 @@ export const Spinner = styled.div`
   display: inline-block;
   width: 80px;
   height: 80px;
+  margin: 0 auto;
 
   &:after {
     content: ' ';

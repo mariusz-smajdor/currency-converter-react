@@ -9,6 +9,7 @@ export const Wrapper = styled.form`
 export const Title = styled.h1`
   color: ${props => props.theme.color.mainDetail};
   text-align: center;
+  margin: 0 0 20px;
 `
 
 export const Label = styled.label`
