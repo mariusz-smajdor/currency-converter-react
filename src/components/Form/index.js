@@ -7,15 +7,13 @@ import Info from "./Info"
 import { Wrapper, Title, Label, LabelText, Input, Button } from "./styled"
 
 const Form = () => {
-  const { rates, state, date } = useCurrencies()
   const [amount, setAmount] = useState("")
   const [currency, setCurrency] = useState("AED")
   const [result, setResult] = useState()
 
-  console.log(rates && Object.keys(rates)[0])
-
-  console.log(rates)
   const inputRef = useRef(null)
+
+  const { rates, state, date } = useCurrencies()
 
   const calculateResultHandler = (amount, currency, rate) => {
     setResult({
