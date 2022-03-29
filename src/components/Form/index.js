@@ -1,11 +1,10 @@
 import { useState, useRef } from "react"
 
 import { Wrapper, Title, Label, LabelText, Input, Button } from "./styled"
-import { currencies } from "../../currencies"
 
 const Form = props => {
   const [amount, setAmount] = useState("")
-  const [currency, setCurrency] = useState("EUR")
+  const [currency, setCurrency] = useState(Object.keys(props.rates)[0])
 
   const inputRef = useRef(null)
 
@@ -14,8 +13,7 @@ const Form = props => {
   const formSubmitHandler = event => {
     event.preventDefault()
 
-    const currencyInfo = currencies.find(curr => curr.short === currency)
-    const rate = currencyInfo.rate
+    const rate = props.rates[currency]
 
     if (!amount) {
       focusInput(inputRef)
@@ -49,8 +47,8 @@ const Form = props => {
           value={currency}
           onChange={event => setCurrency(event.target.value)}
         >
-          {currencies.map(currency => (
-            <option key={currency.short} value={currency.short}>{currency.name}</option>
+          {Object.keys(props.rates).map(currency => (
+            <option key={currency} value={currency}>{currency}</option>
           ))}
         </Input>
       </Label>

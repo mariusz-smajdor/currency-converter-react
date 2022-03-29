@@ -10,8 +10,7 @@ const Info = props => {
         {props.result && `${props.result.sourceAmount} PLN = ${props.result.targetAmount} ${props.result.currency}`}
       </InfoPar>
       <InfoPar>
-        Kursy walut pochodzą ze strony nbp.pl z tabeli nr
-        048/A/NBP/2022 z dnia 2022 03 10.
+        Kursy walut pobierane są z Europejskiego Banku Centralnego. Aktualne na dzień: {props.date}
       </InfoPar>
       <InfoPar>
         Dzisiaj jest {" "}
